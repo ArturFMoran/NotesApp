@@ -72,7 +72,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="lable" destination="m4l-3M-ar4" id="78t-UT-Sv5"/>
+                        <outlet property="label" destination="m4l-3M-ar4" id="aJ7-AH-Gcv"/>
                         <outlet property="table" destination="5eh-GL-lCu" id="TdQ-q8-i0s"/>
                     </connections>
                 </viewController>
@@ -87,9 +87,39 @@
                     <view key="view" contentMode="scaleToFill" id="hZ8-ND-J8e">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myD-aD-25v">
+                                <rect key="frame" x="10" y="57" width="370" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="9Ew-pZ-NqV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HRV-XQ-dVT">
+                                <rect key="frame" x="10" y="119" width="370" height="681"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ac2-wM-iGg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ac2-wM-iGg" firstAttribute="trailing" secondItem="HRV-XQ-dVT" secondAttribute="trailing" constant="10" id="I0X-PP-EXH"/>
+                            <constraint firstItem="ac2-wM-iGg" firstAttribute="trailing" secondItem="myD-aD-25v" secondAttribute="trailing" constant="10" id="ICW-0O-Dt3"/>
+                            <constraint firstItem="HRV-XQ-dVT" firstAttribute="leading" secondItem="ac2-wM-iGg" secondAttribute="leading" constant="10" id="Pv9-49-nqg"/>
+                            <constraint firstItem="HRV-XQ-dVT" firstAttribute="top" secondItem="myD-aD-25v" secondAttribute="bottom" constant="10" id="aWT-zu-ynJ"/>
+                            <constraint firstItem="ac2-wM-iGg" firstAttribute="bottom" secondItem="HRV-XQ-dVT" secondAttribute="bottom" constant="10" id="khS-vH-gwY"/>
+                            <constraint firstItem="myD-aD-25v" firstAttribute="leading" secondItem="ac2-wM-iGg" secondAttribute="leading" constant="10" id="uwo-f8-f3X"/>
+                            <constraint firstItem="myD-aD-25v" firstAttribute="top" secondItem="ac2-wM-iGg" secondAttribute="top" constant="10" id="zV2-Og-khY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noteField" destination="HRV-XQ-dVT" id="M99-wN-3kA"/>
+                        <outlet property="titleField" destination="myD-aD-25v" id="YE6-q9-qZQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwa-yz-Ee2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,6 +160,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
